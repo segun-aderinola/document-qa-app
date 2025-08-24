@@ -56,9 +56,10 @@ export const QAForm = forwardRef<QAFormRef, QAFormProps>(
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.3 }}
+        className="w-full"
       >
-        <Card className="p-4">
-          <form onSubmit={handleSubmit} className="space-y-4">
+        <Card className="p-3 sm:p-4 lg:p-6">
+          <form onSubmit={handleSubmit} className="space-y-3 sm:space-y-4">
             <div className="space-y-2">
               <Textarea
                 ref={textareaRef}
@@ -67,16 +68,19 @@ export const QAForm = forwardRef<QAFormRef, QAFormProps>(
                 onChange={(e) => setQuestion(e.target.value)}
                 onKeyDown={handleKeyDown}
                 disabled={loading || disabled}
-                className="min-h-[100px] resize-none"
+                className="min-h-[80px] sm:min-h-[100px] lg:min-h-[120px] resize-none text-sm sm:text-base"
                 maxLength={MAX_LENGTH}
               />
               
-              <div className="flex justify-between items-center text-xs">
-                <span className="text-muted-foreground">
-                  Press Cmd+Enter to send
+              {/* Mobile: Stack info vertically */}
+              <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-2 sm:gap-0 text-xs">
+                <span className="text-muted-foreground order-2 sm:order-1">
+                  Press <kbd className="px-1 py-0.5 bg-muted rounded text-xs">
+                    {navigator.platform.includes('Mac') ? 'Cmd' : 'Ctrl'}+Enter
+                  </kbd> to send
                 </span>
                 <span 
-                  className={`transition-colors ${
+                  className={`transition-colors order-1 sm:order-2 self-end sm:self-auto ${
                     isNearLimit 
                       ? question.length > MAX_LENGTH 
                         ? 'text-red-500' 
@@ -89,18 +93,22 @@ export const QAForm = forwardRef<QAFormRef, QAFormProps>(
               </div>
             </div>
             
+            {/* Responsive button */}
             <div className="flex justify-end">
               <Button
                 type="submit"
                 disabled={!isValid || loading || disabled}
-                className="flex items-center gap-2"
+                className="flex items-center gap-2 w-full sm:w-auto text-sm sm:text-base px-4 sm:px-6"
+                size="default"
               >
                 {loading ? (
                   <div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" />
                 ) : (
                   <Send className="w-4 h-4" />
                 )}
-                {loading ? 'Asking...' : 'Ask Question'}
+                <span className="sm:inline">
+                  {loading ? 'Asking...' : 'Ask Question'}
+                </span>
               </Button>
             </div>
           </form>

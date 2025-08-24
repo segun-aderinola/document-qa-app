@@ -19,50 +19,53 @@ export function Sidebar({ onUploadClick }: SidebarProps) {
       initial={{ x: -300 }}
       animate={{ x: 0 }}
       transition={{ type: "spring", stiffness: 300, damping: 30 }}
-      className="w-80 h-full bg-background border-r flex flex-col"
+      className="w-72 sm:w-80 lg:w-96 h-full bg-background border-r flex flex-col"
     >
-      {/* Header */}
-      <div className="p-4 border-b">
-        <div className="flex items-center gap-3 mb-4">
-          <GradientIcon icon={FileText} size={24} />
-          <h2 className="text-lg font-semibold">Documents</h2>
+      {/* Header - Responsive */}
+      <div className="p-3 sm:p-4 border-b">
+        <div className="flex items-center gap-2 sm:gap-3 mb-3 sm:mb-4">
+          <GradientIcon icon={FileText} size={20} className="sm:hidden" />
+          <GradientIcon icon={FileText} size={24} className="hidden sm:block" />
+          <h2 className="text-base sm:text-lg font-semibold">Documents</h2>
         </div>
         
         <Button
           onClick={onUploadClick}
-          className="w-full flex items-center gap-2"
+          className="w-full flex items-center justify-center gap-2 text-sm sm:text-base"
+          size="sm"
         >
           <Plus className="w-4 h-4" />
-          Upload Document
+          <span>Upload Document</span>
         </Button>
       </div>
 
-      {/* Document List */}
-      <div className="flex-1 overflow-y-auto p-4">
+      {/* Document List - Scrollable */}
+      <div className="flex-1 overflow-y-auto p-3 sm:p-4">
         {documents.length > 0 ? (
           <DocList />
         ) : (
-          <Card className="p-6 text-center">
-            <GradientIcon icon={FileText} size={32} className="mx-auto mb-3" />
-            <p className="text-sm text-muted-foreground mb-3">
+          <Card className="p-4 sm:p-6 text-center">
+            <GradientIcon icon={FileText} size={28} className="mx-auto mb-3 sm:hidden" />
+            <GradientIcon icon={FileText} size={32} className="mx-auto mb-3 hidden sm:block" />
+            <p className="text-xs sm:text-sm text-muted-foreground mb-3 leading-relaxed">
               No documents uploaded yet
             </p>
             <Button
               variant="outline"
               size="sm"
               onClick={onUploadClick}
-              className="w-full"
+              className="w-full text-xs sm:text-sm"
             >
-              <Plus className="w-4 h-4 mr-2" />
+              <Plus className="w-3 h-3 sm:w-4 sm:h-4 mr-2" />
               Upload First Document
             </Button>
           </Card>
         )}
       </div>
 
-      {/* Footer */}
-      <div className="p-4 border-t">
-        <div className="text-xs text-muted-foreground text-center">
+      {/* Footer - Show count */}
+      <div className="p-3 sm:p-4 border-t bg-muted/30">
+        <div className="text-xs sm:text-sm text-muted-foreground text-center">
           {documents.length} document{documents.length === 1 ? '' : 's'} uploaded
         </div>
       </div>

@@ -10,7 +10,6 @@ import { Toaster } from './components/ui/toaster';
 function App() {
   const handleError = (error: Error, errorInfo: any) => {
     console.error('Application error:', error, errorInfo);
-    // In production, you might want to send this to an error reporting service
   };
 
   return (
