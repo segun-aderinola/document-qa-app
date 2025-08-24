@@ -85,35 +85,6 @@ A modern, responsive React application that allows users to upload documents and
 | `Esc` | Clear search or close modals |
 | `Cmd/Ctrl + Enter` | Submit question (when typing) |
 
-## 📁 Project Structure
-
-```
-src/
-├── components/
-│   ├── common/          # Reusable UI components
-│   │   ├── Dropzone.tsx
-│   │   ├── GradientIcon.tsx
-│   │   ├── SearchBar.tsx
-│   │   ├── ThemeToggle.tsx
-│   │   └── ...
-│   ├── docs/            # Document-specific components
-│   │   ├── DocCard.tsx
-│   │   ├── DocView.tsx
-│   │   ├── QAForm.tsx
-│   │   └── ...
-│   ├── layout/          # Layout components
-│   │   ├── AppShell.tsx
-│   │   ├── Header.tsx
-│   │   └── Sidebar.tsx
-│   └── ui/              # shadcn UI components
-├── context/
-│   └── AppContext.tsx   # Global state management
-├── hooks/               # Custom React hooks
-├── mocks/               # Mock data generators
-├── routes/              # Page components
-├── types/               # TypeScript definitions
-└── utils/               # Helper functions
-```
 
 ## 🧪 Testing
 
@@ -168,44 +139,6 @@ Advanced search features:
 - **Result highlighting** with matched terms emphasized
 - **Grouped results** by document for better organization
 
-## 🚀 Deployment
-
-### Netlify
-```bash
-npm run build
-# Deploy dist/ folder to Netlify
-```
-
-### Vercel
-```bash
-npm run build
-# Deploy using Vercel CLI or GitHub integration
-```
-
-### Manual Deployment
-The `build/` folder contains all static files ready for deployment to any web server.
-
-## 🔧 Environment Variables
-
-| Variable | Description | Default |
-|----------|-------------|---------|
-| `REACT_APP_OPENAI_API_KEY` | OpenAI API key for live responses (optional) | Not set |
-
-*Note: When the API key is not provided, the app falls back to mock responses.*
-
-## 🤝 Contributing
-
-1. Fork the repository
-2. Create a feature branch: `git checkout -b feature/amazing-feature`
-3. Commit changes: `git commit -m 'Add amazing feature'`
-4. Push to branch: `git push origin feature/amazing-feature`
-5. Open a Pull Request
-
-### Development Guidelines
-- Follow TypeScript strict mode requirements
-- Maintain test coverage above 80%
-- Use conventional commits for clear history
-- Ensure all linting passes before committing
 
 ## 📄 License
 
