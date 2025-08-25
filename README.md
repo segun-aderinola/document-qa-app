@@ -54,37 +54,6 @@ A modern, responsive React application that allows users to upload documents and
    npm run build
    ```
 
-## 🎨 Design System
-
-### Colors
-- **Background Colors**: 
-  - Light: `#FFFFFF`, `#F9FAFB`, `#F3F4F6`
-  - Dark: `#030508`, `#111827`, `#080C13`
-- **Brand Gradient**: `linear-gradient(270deg, #6A11CB 0%, #2575FC 100%)`
-- **Text**: Dynamic based on theme with proper contrast ratios
-
-### Typography
-- **Font Family**: Montserrat (Google Fonts)
-- **Sizes**: Responsive scaling from mobile to desktop
-- **Weights**: 400 (regular), 500 (medium), 600 (semibold), 700 (bold)
-
-### Components
-- **Buttons**: Gradient backgrounds with hover/active states
-- **Cards**: Subtle shadows with rounded corners
-- **Icons**: Lucide React icons with gradient treatments
-- **Animations**: Spring-based transitions via Framer Motion
-
-## ⌨️ Keyboard Shortcuts
-
-| Shortcut | Action |
-|----------|---------|
-| `/` | Focus search bar |
-| `N` | Focus question input (when viewing document) |
-| `D` | Toggle theme (Light → Dark → System) |
-| `Shift + ?` | Show shortcuts modal |
-| `Esc` | Clear search or close modals |
-| `Cmd/Ctrl + Enter` | Submit question (when typing) |
-
 
 ## 🧪 Testing
 
@@ -106,15 +75,6 @@ npm test -- --watch
 - **Integration Tests**: Component interactions and user workflows
 - **Error Boundary Tests**: Error handling and recovery
 
-## 🛠️ Scripts
-
-| Command | Description |
-|---------|-------------|
-| `npm start` | Start development server |
-| `npm run build` | Build for production |
-| `npm test` | Run tests |
-| `npm run lint` | Lint code with ESLint |
-| `npm run format` | Format code with Prettier |
 
 ## 🌟 Advanced Features
 
