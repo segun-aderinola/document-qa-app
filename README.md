@@ -30,14 +30,14 @@ A modern, responsive React application that allows users to upload documents and
 ## 🚀 Getting Started
 
 ### Prerequisites
-- Node.js 16+ 
+- Node.js 18+ 
 - npm or yarn
 
 ### Installation
 
 1. **Clone and install dependencies**:
    ```bash
-   git clone <your-repo-url>
+   git clone https://github.com/segun-aderinola/document-qa-app.git
    cd doc-qa-suite-cra
    npm install
    ```
